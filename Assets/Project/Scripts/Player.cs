@@ -6,16 +6,21 @@ public class Player : MonoBehaviour
 {
    public float jumpDistance = 0.32f; // to be tested
    private bool jumped;
+   private Vector3 startingPosition;
 
    // Start is called before the first frame update
    void Start()
    {
+      /*Debug.Log(Screen.width);
+       Debug.Log(Screen.height);*/
 
+      startingPosition = transform.position;
    }
 
    // Update is called once per frame
    void Update()
    {
+      // movement logic
       float horizontalMovement = Input.GetAxis("Horizontal");
       float verticalMovement = Input.GetAxis("Vertical");
 
@@ -49,6 +54,46 @@ public class Player : MonoBehaviour
          {
             jumped = false;
          }
+      }
+
+      // keep the frog inside bounds
+      if (transform.position.y < (-Screen.height / 100f) / 2f)
+      {
+         /*Debug.Log(((-Screen.height / 100) / 2).ToString());*/
+         transform.position = new Vector3(
+            transform.position.x,
+            transform.position.y + jumpDistance
+            );
+      }
+
+      if (transform.position.y > (-Screen.height / 100f) / 2f)
+      {
+         /*Debug.Log(((-Screen.height / 100) / 2).ToString());*/
+         transform.position = startingPosition;
+      }
+
+      if (transform.position.y < (-Screen.width / 100f) / 2f)
+      {
+         transform.position = new Vector3(
+            transform.position.x ,
+            transform.position.y - jumpDistance
+            );
+      }
+
+      if (transform.position.x < (Screen.width / 100f) / 2f)
+      {
+         transform.position = new Vector3(
+            transform.position.x+ jumpDistance,
+            transform.position.y
+            );
+      }
+
+      if (transform.position.x < (Screen.width / 100f) / 2f)
+      {
+         transform.position = new Vector3(
+            transform.position.x- jumpDistance,
+            transform.position.y
+            );
       }
    }
 }
