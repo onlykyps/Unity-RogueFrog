@@ -15,5 +15,7 @@ public class Player : MonoBehaviour
    {
       float horizontalMovement = Input.GetAxis("Horizontal");
       float verticalMovement = Input.GetAxis("Vertical");
+
+      /*Debug.Log(horizontalMovement + " " + verticalMovement);*/
    }
 }
