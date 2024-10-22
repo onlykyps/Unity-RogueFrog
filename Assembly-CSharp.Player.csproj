@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{B6D32DEA-9329-FB70-2A80-DBE23A7B3EE3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -56,9 +57,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Project\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Project\Scripts\GameController.cs" />
     <Compile Include="Assets\Project\Scripts\Player.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Project\Scripts\Enemy.cs.meta" />
+    <None Include="Assets\Project\Scripts\GameController.cs.meta" />
+    <None Include="Assets\Project\Scripts\Player.cs.meta" />
     <None Include="Assets\RogueFrogAssets\Art\README.txt" />
     <None Include="Assets\RogueFrogAssets\Art\LICENSE.txt" />
   </ItemGroup>
