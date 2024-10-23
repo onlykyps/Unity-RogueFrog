@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -51,4 +53,16 @@ public class GameController : MonoBehaviour
          enemy.speed *= difficultyIncrease;
       }
    }
+
+   void OnPlayerMoved()
+   {
+      if (player.transform.position.y > highestPosition)
+      {
+         highestPosition = player.transform.position.y;
+         score++;
+         scoreText.text = "Score: " + score;
+      }
+   }
+
+  
 }
